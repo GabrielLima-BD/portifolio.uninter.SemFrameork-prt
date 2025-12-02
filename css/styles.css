@@ -80,6 +80,9 @@ body, .site-header, .container, .card{transition:background-color .25s ease, col
 .btn.small{padding:.4rem .6rem;font-size:.9rem}
 
 .hero-visual{justify-self:end;opacity:.95}
+/* Torna SVG do hero responsivo para evitar overflow em telas pequenas */
+.hero-visual{max-width:380px;width:100%}
+.hero-visual svg{max-width:100%;height:auto;display:block}
 
 /* Seções */
 /* Estilos gerais de seção: título e subtítulo */
@@ -105,6 +108,20 @@ section h2{font-family:'Space Grotesk', Inter, sans-serif;margin-top:0}
 .card-actions{margin-top:.6rem}
 .link{color:var(--muted);text-decoration:underline}
 
+/* removido .live-link: URLs explícitas não são exibidas, usamos apenas botões "Ver Código | Ver Site" */
+
+/* Carrossel horizontal (substitui grade em telas pequenas/medias) */
+.carousel{display:flex;align-items:center;gap:.6rem;position:relative}
+.carousel-track{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:1rem 0;scroll-behavior:smooth}
+.carousel-track::-webkit-scrollbar{height:10px}
+.carousel-track::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.06);border-radius:10px}
+.carousel-track .card{flex:0 0 calc(300px);scroll-snap-align:center}
+.carousel-btn{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text);padding:.5rem .7rem;border-radius:8px;cursor:pointer}
+.carousel-btn:hover{background:var(--glass)}
+.carousel-btn.prev{margin-left:.2rem}
+.carousel-btn.next{margin-right:.2rem}
+.link{color:var(--muted);text-decoration:underline}
+
 /* Contact */
 .contact{padding:3rem 0}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
@@ -117,6 +134,14 @@ input,textarea{width:100%;padding:.7rem;border-radius:8px;background:transparent
 
 /* Footer */
 .site-footer{border-top:1px solid rgba(255,255,255,0.03);padding:1.4rem 0;margin-top:2rem}
+.site-footer .footer-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;text-align:center}
+.site-footer p{margin:0}
+.social{display:flex;gap:.6rem;align-items:center}
+.social-link{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text);text-decoration:none;transition:background .15s ease, transform .12s ease}
+.social-link:hover{background:rgba(255,255,255,0.04);transform:translateY(-3px)}
+.social-link svg{display:block;width:20px;height:20px}
+.light-theme .social-link{border-color:rgba(2,6,23,0.06)}
+.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
 .muted{color:var(--muted)}
 
 /* Responsividade */
@@ -131,9 +156,22 @@ input,textarea{width:100%;padding:.7rem;border-radius:8px;background:transparent
   .nav{display:none}
   .nav-toggle{display:block}
   /* Estilo do menu quando aberto em mobile: coluna e fundo leve */
-  .nav.open{display:flex;flex-direction:column;gap:.6rem;padding:.8rem;background:var(--panel);position:absolute;top:var(--header-height);right:1rem;border-radius:8px;box-shadow:0 6px 18px rgba(2,6,23,0.35)}
+  .nav.open{display:flex;flex-direction:column;gap:.6rem;padding:1rem;background:var(--panel);position:absolute;top:calc(var(--header-height) + 0.5rem);left:0;right:0;margin:0 1rem;border-radius:10px;box-shadow:0 10px 30px rgba(2,6,23,0.35);z-index:100}
   .grid{grid-template-columns:1fr}
   .form-grid{grid-template-columns:1fr}
+}
+
+/* Overlay usado quando o menu mobile está aberto */
+.menu-overlay{position:fixed;inset:0;background:rgba(2,6,23,0.45);z-index:80;display:block;opacity:1;transition:opacity .2s ease}
+.menu-overlay.hidden{display:none;opacity:0}
+
+/* Estilos de foco visível para melhorar acessibilidade */
+:focus{outline:2px solid var(--accent);outline-offset:3px}
+
+/* Aumenta touch targets em telas muito pequenas */
+@media(max-width:420px){
+  .btn{padding:.9rem 1rem}
+  .nav a{padding:.8rem 1rem}
 }
 
 /* Ajustes extra para telas muito pequenas (telefones menores) */
