@@ -12,6 +12,7 @@
 </head>
 <body>
   <header class="site-header">
+    <!-- Cabeçalho fixo do site: marca, navegação e botão para menu em telas pequenas -->
     <div class="container header-inner">
       <a class="brand" href="#">Gabriel Lima</a>
       <nav class="nav" id="nav">
@@ -26,6 +27,7 @@
 
   <main>
     <section class="hero" id="home">
+      <!-- Seção principal (hero) com apresentação curta e chamadas para ação -->
       <div class="container hero-inner">
         <div class="hero-content">
           <h1>Olá — eu sou <span>Gabriel Lima</span></h1>
@@ -50,6 +52,7 @@
     </section>
 
     <section class="container about" id="about">
+      <!-- Sobre: resumo das habilidades e competências principais -->
       <h2>Sobre Mim</h2>
       <div class="about-grid">
         <div class="about-text">
@@ -69,6 +72,7 @@
     </section>
 
     <section class="container education" id="education">
+      <!-- Formação: cursos e universidades onde estudei (resumo) -->
       <h2>Formação</h2>
       <div class="timeline">
         <div class="item">
@@ -89,6 +93,7 @@
     </section>
 
     <section class="container portfolio" id="portfolio">
+      <!-- Portfólio: projetos destacados, cada card tem link para código/relatório -->
       <h2>Portfólio</h2>
       <p class="subtitle">Alguns projetos recentes — clique para ver detalhes.</p>
       <div class="grid">
@@ -124,14 +129,17 @@
     </section>
 
     <section class="container contact" id="contact">
+      <!-- Contato: formulário simples com validação no cliente (simulação de envio) -->
       <h2>Contato</h2>
       <p class="subtitle">Tem um projeto ou quer conversar? Envie uma mensagem.</p>
 
+      <!-- Formulário: campos com atributos para validação básica (required, minlength) -->
       <form id="contact-form" novalidate>
         <div class="form-grid">
           <label>
             Nome
             <input type="text" name="name" id="name" required minlength="2">
+            <!-- Mensagem de erro exibida abaixo do campo quando a validação falha -->
             <small class="error" data-for="name"></small>
           </label>
 
@@ -153,6 +161,7 @@
           <button type="reset" class="btn outline">Limpar</button>
         </div>
 
+        <!-- Feedback geral do formulário (ex.: enviando, enviado) -->
         <div id="form-feedback" class="form-feedback" aria-live="polite"></div>
       </form>
     </section>

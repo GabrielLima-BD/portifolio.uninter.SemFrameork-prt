@@ -1,5 +1,6 @@
-// Pequenas interações: nav mobile, scroll suave, validação de formulário
+// Pequenas interações: menu mobile, scroll suave, preenchimento do ano e validação do formulário
 (function(){
+  // Toggle do menu em telas pequenas: mostra/oculta a nav quando o botão é clicado
   const navToggle = document.getElementById('nav-toggle');
   const nav = document.getElementById('nav');
   navToggle && navToggle.addEventListener('click', ()=>{
@@ -7,29 +8,34 @@
     nav.style.display = nav.classList.contains('open') ? 'flex' : '';
   });
 
-  // Smooth scroll for in-page links
+  // Scroll suave para links internos (âncoras)
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click', (e)=>{
       const target = document.querySelector(a.getAttribute('href'));
-      if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});
+      if(target){
+        e.preventDefault();
+        target.scrollIntoView({behavior:'smooth',block:'start'});
+        // Fecha menu mobile se estiver aberto
         if(nav.classList.contains('open')){nav.classList.remove('open');nav.style.display='';}
       }
     })
   });
 
-  // Footer year
+  // Atualiza o ano no rodapé automaticamente
   const year = document.getElementById('year'); if(year) year.textContent = new Date().getFullYear();
 
-  // Form validation + simulate send
+  // Validação simples do formulário e simulação de envio (não há backend)
   const form = document.getElementById('contact-form');
   const feedback = document.getElementById('form-feedback');
   if(!form) return;
 
+  // Mostra mensagem de erro para um campo específico (pequeno helper)
   function showError(el, msg){
     const s = form.querySelector(`small[data-for="${el}"]`);
     if(s) s.textContent = msg || '';
   }
 
+  // Limpa mensagens de erro antes de validar novamente
   function clearErrors(){
     form.querySelectorAll('small.error').forEach(s=>s.textContent='');
   }
@@ -41,16 +47,20 @@
     const email = form.email.value.trim();
     const message = form.message.value.trim();
     let valid = true;
+
+    // Regras de validação simples, suficientes para um formulário de contato
     if(name.length < 2){ showError('name','Nome muito curto'); valid=false }
     if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ showError('email','E-mail inválido'); valid=false }
     if(message.length < 10){ showError('message','Mensagem muito curta'); valid=false }
     if(!valid) return;
 
+    // Simula envio e mostra feedback ao usuário
     feedback.textContent = 'Enviando...';
-    // Simula envio (sem backend) — aqui você pode integrar API real
+    // Simulação: substitua por integração real (fetch/axios) quando tiver backend
     setTimeout(()=>{
       feedback.textContent = 'Mensagem enviada com sucesso — agradeço o contato! (simulação)';
       form.reset();
+      // Log local para depuração do aluno (não enviar em produção)
       console.log('Simulação envio:', {name,email,message});
     }, 900);
   });

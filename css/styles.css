@@ -1,5 +1,6 @@
-/* Theme variables */
+/* Variáveis do tema */
 :root{
+  /* Variáveis de tema: cores, espaçamentos e limites usados em todo o site */
   --bg:#07080a;
   --panel:#0b1220;
   --muted:#9aa4b2;
@@ -26,6 +27,7 @@ body{
 .site-header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:linear-gradient(180deg, rgba(10,12,15,0.9), rgba(10,12,15,0.85));backdrop-filter:blur(6px);z-index:999}
 
 /* evita que o conteúdo seja sobreposto pelo cabeçalho fixo */
+/* Ajuste para compensar o cabeçalho fixo e manter conteúdo visível */
 body{padding-top:var(--header-height);}
 .brand{font-weight:800;color:var(--text);letter-spacing:1px;text-decoration:none}
 .nav{display:flex;gap:1rem}
@@ -33,7 +35,6 @@ body{padding-top:var(--header-height);}
 .nav a:hover{color:var(--text);background:var(--glass)}
 .nav-toggle{display:none;background:none;border:0;color:var(--text);font-size:1.2rem}
 
-/* Hero */
 .hero{padding:4rem 0}
 .hero-inner{display:grid;grid-template-columns:1fr 380px;gap:2rem;align-items:center}
 .hero h1{font-size:clamp(1.8rem,4vw,3.2rem);margin:0;font-family:'Space Grotesk', Inter, sans-serif}
@@ -47,7 +48,8 @@ body{padding-top:var(--header-height);}
 
 .hero-visual{justify-self:end;opacity:.95}
 
-/* Sections */
+/* Seções */
+/* Estilos gerais de seção: título e subtítulo */
 section h2{font-family:'Space Grotesk', Inter, sans-serif;margin-top:0}
 .subtitle{color:var(--muted);margin-top:.25rem}
 
@@ -84,21 +86,23 @@ input,textarea{width:100%;padding:.7rem;border-radius:8px;background:transparent
 .site-footer{border-top:1px solid rgba(255,255,255,0.03);padding:1.4rem 0;margin-top:2rem}
 .muted{color:var(--muted)}
 
-/* Responsiveness */
+/* Responsividade */
+/* Quebras de responsividade: adapta layout para tablets e celulares */
 @media(max-width:960px){
   .hero-inner{grid-template-columns:1fr}
   .about-grid{grid-template-columns:1fr}
   .grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:680px){
+  /* Navegação escondida em telas pequenas, botão aparece (menu mobile) */
   .nav{display:none}
   .nav-toggle{display:block}
   .grid{grid-template-columns:1fr}
   .form-grid{grid-template-columns:1fr}
 }
 
-/* Small animations */
 .card{transition:transform .28s ease, box-shadow .28s ease}
+/* Animações pequenas para interações de hover */
 .card:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(2,6,23,0.6)}
 .fade-in{animation:fadeIn .9s ease both}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
