@@ -14,7 +14,12 @@
   <header class="site-header">
     <!-- Cabeçalho fixo do site: marca, navegação e botão para menu em telas pequenas -->
     <div class="container header-inner">
-      <a class="brand" href="#">Gabriel Lima</a>
+      <!-- Marca + botão de tema: ficam juntos para manter o botão próximo ao nome -->
+      <div class="brand-row">
+        <a class="brand" href="#">Gabriel Lima</a>
+        <!-- Botão para alternar tema (escuro/claro). Inicia em escuro por padrão. -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
+      </div>
       <nav class="nav" id="nav">
         <a href="#about">Sobre</a>
         <a href="#education">Formação</a>

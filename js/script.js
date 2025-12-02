@@ -24,6 +24,27 @@
   // Atualiza o ano no rodapé automaticamente
   const year = document.getElementById('year'); if(year) year.textContent = new Date().getFullYear();
 
+  // === Tema (escuro/claro) ===
+  const themeToggle = document.getElementById('theme-toggle');
+  const currentTheme = localStorage.getItem('theme');
+  // Se o usuário já escolheu, aplica; caso contrário, mantém o padrão (escuro)
+  if(currentTheme === 'light'){
+    document.body.classList.add('light-theme');
+    if(themeToggle) themeToggle.textContent = '☀️';
+  } else {
+    document.body.classList.remove('light-theme');
+    if(themeToggle) themeToggle.textContent = '🌙';
+  }
+
+  if(themeToggle){
+    themeToggle.addEventListener('click', ()=>{
+      const isLight = document.body.classList.toggle('light-theme');
+      // Atualiza ícone e armazena preferência
+      themeToggle.textContent = isLight ? '☀️' : '🌙';
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    })
+  }
+
   // Validação simples do formulário e simulação de envio (não há backend)
   const form = document.getElementById('contact-form');
   const feedback = document.getElementById('form-feedback');
