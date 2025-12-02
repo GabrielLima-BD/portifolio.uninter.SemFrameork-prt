@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfólio — Gabriel Lima (Cientista de Dados)</title>
+  <meta name="description" content="Gabriel Lima — Cientista de Dados / Analista de Dados. Projetos de ML, análises e visualização de dados." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">Gabriel Lima</a>
+      <nav class="nav" id="nav">
+        <a href="#about">Sobre</a>
+        <a href="#education">Formação</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#contact">Contato</a>
+      </nav>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Abrir menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1>Olá — eu sou <span>Gabriel Lima</span></h1>
+          <p class="lead">Cientista de Dados | Analista de Dados — transformo dados em insights acionáveis, relatórios e modelos preditivos.</p>
+          <p class="cta-row">
+            <a class="btn primary" href="#portfolio">Ver Projetos</a>
+            <a class="btn outline" href="#contact">Entrar em contato</a>
+          </p>
+        </div>
+        <div class="hero-visual" aria-hidden>
+          <svg width="320" height="240" viewBox="0 0 320 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0" y="0" width="320" height="240" rx="18" fill="#111" stroke="#2dd4bf" stroke-opacity="0.08"/>
+            <g transform="translate(20,20)">
+              <rect x="0" y="0" width="280" height="200" rx="12" fill="#0b1220" />
+              <circle cx="46" cy="46" r="8" fill="#2dd4bf" />
+              <rect x="70" y="30" width="160" height="18" rx="6" fill="#111" opacity="0.6" />
+              <rect x="0" y="90" width="280" height="70" rx="6" fill="#08101a" />
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="container about" id="about">
+      <h2>Sobre Mim</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Sou apaixonado por dados: extraio, limpo e modelo informações para resolver problemas reais. Trabalho com SQL, Python (pandas, scikit-learn), visualização e implantação de modelos.</p>
+          <ul>
+            <li>Análise exploratória de dados (EDA) e modelagem</li>
+            <li>Machine Learning e avaliação de modelos</li>
+            <li>Visualização de dados e dashboards interativos</li>
+          </ul>
+        </div>
+        <div class="about-stats">
+          <div class="card"><strong>10+</strong><span>Modelos e análises</span></div>
+          <div class="card"><strong>4+</strong><span>Anos</span></div>
+          <div class="card"><strong>100%</strong><span>Reprodutíveis</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container education" id="education">
+      <h2>Formação</h2>
+      <div class="timeline">
+        <div class="item">
+          <time>2021 — 2024</time>
+          <div class="body">
+            <h3>Bacharel em Ciência da Computação</h3>
+            <p>Uninter — ênfase em estatística, bancos de dados e aprendizado de máquina.</p>
+          </div>
+        </div>
+        <div class="item">
+          <time>2020</time>
+          <div class="body">
+            <h3>Curso em Data Science</h3>
+            <p>Udemy — Python, SQL, visualização e modelagem de dados.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container portfolio" id="portfolio">
+      <h2>Portfólio</h2>
+      <p class="subtitle">Alguns projetos recentes — clique para ver detalhes.</p>
+      <div class="grid">
+        <article class="card project">
+          <div class="thumb" style="background: linear-gradient(135deg,#0f1724,#071029);">
+            <svg viewBox="0 0 240 140"><rect width="240" height="140" fill="#08101a" rx="8"/></svg>
+          </div>
+          <div class="card-body">
+            <h3>Análise Exploratória e Dashboard</h3>
+            <p>EDA completo com limpeza de dados, insights e dashboard interativo para acompanhamento de KPIs.</p>
+            <p class="card-actions"><a href="#" class="btn small">Ver</a> <a href="#" class="link">Código / Relatório</a></p>
+          </div>
+        </article>
+
+        <article class="card project">
+          <div class="thumb" style="background: linear-gradient(135deg,#16324b,#0b2333);"></div>
+          <div class="card-body">
+            <h3>Modelo de Classificação</h3>
+            <p>Pipeline em Python com pré-processamento, engenharia de atributos e modelo de classificação com avaliação completa.</p>
+            <p class="card-actions"><a href="#" class="btn small">Ver</a> <a href="#" class="link">Código / Notebook</a></p>
+          </div>
+        </article>
+
+        <article class="card project">
+          <div class="thumb" style="background: linear-gradient(135deg,#2d164b,#0b1230);"></div>
+          <div class="card-body">
+            <h3>Pipeline e Implantação</h3>
+            <p>Automação do fluxo de dados, criação de APIs para inferência e implantação de modelos reprodutíveis.</p>
+            <p class="card-actions"><a href="#" class="btn small">Ver</a> <a href="#" class="link">Código / Docs</a></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container contact" id="contact">
+      <h2>Contato</h2>
+      <p class="subtitle">Tem um projeto ou quer conversar? Envie uma mensagem.</p>
+
+      <form id="contact-form" novalidate>
+        <div class="form-grid">
+          <label>
+            Nome
+            <input type="text" name="name" id="name" required minlength="2">
+            <small class="error" data-for="name"></small>
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email" id="email" required>
+            <small class="error" data-for="email"></small>
+          </label>
+
+          <label class="full">
+            Mensagem
+            <textarea name="message" id="message" rows="6" required minlength="10"></textarea>
+            <small class="error" data-for="message"></small>
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Enviar</button>
+          <button type="reset" class="btn outline">Limpar</button>
+        </div>
+
+        <div id="form-feedback" class="form-feedback" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Gabriel Lima — Cientista de Dados</p>
+      <p class="muted">Links: <a href="#portfolio">Portfólio</a> · <a href="#contact">Contato</a></p>
+    </div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
